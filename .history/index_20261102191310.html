@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Una Navidad entre amigos</title>
+  <meta name="theme-color" content="#0f2e22">
+  <meta name="description" content="Tengo una invitación especial para ti">
+  <meta property="og:title" content="Una Navidad entre amigos">
+  <meta property="og:description" content="Tengo una invitación especial para ti">
+  <!-- Tipografías: si no cargan, se usan Georgia / system-ui -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="locked">
+
+  <!-- Nieve (se dibuja desde js/main.js) -->
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <!-- Música: solo se activa al tocar el botón -->
+  <button id="musicBtn" class="music" type="button" aria-pressed="false" aria-label="Activar música">♪</button>
+  <p id="toast" class="toast" role="status" hidden></p>
+
+  <!-- SECCIÓN 1: Bienvenida -->
+  <section id="welcome" class="screen">
+    <div class="lights" id="lights" aria-hidden="true"></div>
+
+    <svg class="tree" viewBox="0 0 160 200" aria-hidden="true">
+      <polygon points="80,6 85,20 100,20 88,29 93,44 80,35 67,44 72,29 60,20 75,20" fill="#d9a441"/>
+      <polygon points="80,26 120,86 40,86" fill="#1d5a3f"/>
+      <polygon points="80,56 132,128 28,128" fill="#17492f"/>
+      <polygon points="80,92 144,172 16,172" fill="#123b27"/>
+      <rect x="72" y="172" width="16" height="20" fill="#5a3a22"/>
+      <circle cx="68" cy="70" r="4" fill="#d9a441"/><circle cx="92" cy="80" r="4" fill="#b02a3f"/>
+      <circle cx="58" cy="110" r="4.5" fill="#b02a3f"/><circle cx="96" cy="116" r="4.5" fill="#d9a441"/>
+      <circle cx="46" cy="152" r="5" fill="#d9a441"/><circle cx="80" cy="146" r="5" fill="#f8f6f0"/><circle cx="114" cy="154" r="5" fill="#b02a3f"/>
+    </svg>
+
+    <p class="kicker">Tengo una invitación especial para ti</p>
+    <button id="openBtn" class="btn" type="button">Abrir invitación</button>
+  </section>
+
+  <!-- Invitación (se muestra al abrir) -->
+  <main id="invitation" hidden>
+
+    <!-- SECCIÓN 2: Revelación -->
+    <section class="panel hero">
+      <h1 class="reveal">Una Navidad entre amigos</h1>
+      <p class="reveal">Gracias por ser parte de mi historia. Quise adelantar la Navidad para vivirla contigo, con calma, buena comida y muchas risas.</p>
+    </section>
+
+    <!-- SECCIÓN 3: Información del evento -->
+    <section class="panel info">
+      <div class="card reveal">
+        <dl>
+          <div><dt>Fecha</dt><dd>Domingo 8 de noviembre de 2026</dd></div>
+          <div><dt>Hora</dt><dd>10:00 am</dd></div>
+          <div><dt>Lugar</dt><dd>Mi casa 😊</dd></div>
+        </dl>
+        <p>Será un día para crear nuevos recuerdos, mirar el pasado y soñar con el futuro.</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3.1: Qué traer -->
+    <section class="panel bring">
+      <h2 class="reveal">Lo que debes traer</h2>
+      <p class="reveal lead">Queridos amigos,</p>
+      <p class="reveal">este día quiero hacer algo especial, por lo que necesito de tu ayuda. Deberás traer tu mejor pinta navideña: habrá muchas fotos y no querrás salir mal. Debe ser ropa cómoda, que te permita moverte, sin quitarte tu estilo.</p>
+      <p class="reveal gift">Además, deberás traer un regalo sorpresa. Aún no sabes a quién se lo darás; eso lo descubrirás cuando nos veamos. Espero con ansias que llegue el día, hasta entonces.</p>
+    </section>
+
+    <!-- SECCIÓN 4: Cuenta regresiva -->
+    <section class="panel count">
+      <h2 class="reveal">Faltan</h2>
+      <div class="timer reveal" id="timer" aria-live="off">
+        <div><b id="d">0</b><span>días</span></div>
+        <div><b id="h">0</b><span>horas</span></div>
+        <div><b id="m">0</b><span>minutos</span></div>
+        <div><b id="s">0</b><span>segundos</span></div>
+      </div>
+      <p class="reveal done" id="done" hidden>¡Hoy es el día! Te espero 🎄</p>
+    </section>
+
+    <!-- SECCIÓN 5: Mensaje final -->
+    <section class="panel final">
+      <blockquote class="reveal">
+        “Porque los mejores regalos no siempre vienen envueltos. A veces son las personas con quienes compartimos los mejores momentos, son con los que construimos nuestra vida.”
+      </blockquote>
+      <p class="reveal sign">Te espero con el corazón navideño ✨</p>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
